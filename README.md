@@ -18,11 +18,6 @@ A Django-based mini project to analyze business records and generate analytics:
 - Filter by category
 - Update values dynamically
 - Analytics calculation
-
-## Screenshots
-[dashboard](webpage_output.png.png)
-[sql output](sql_outut.png.png)
-
 ## How to Run
 1. Clone repository
 2. Install requirements
