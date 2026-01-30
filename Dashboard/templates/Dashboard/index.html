@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Analytics Dashboard</title>
+</head>
+<body>
+    <h2>Business Records</h2>
+    <form method="get">
+        <input type="text" name="category" placeholder="Enter Category">
+        <button type="submit">Filter</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Category</th>
+            <th>Value</th>
+            <th>Date</th>
+            <th>Update</th>
+        </tr>
+
+        {% for r in records %}
+        <tr>
+            <td>{{ r.id }}</td>
+            <td>{{ r.category }}</td>
+            <td>{{ r.value }}</td>
+            <td>{{ r.date }}</td>
+            <td>
+                <a href="/update/{{ r.id }}/">Increase</a>
+        </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Analytics</h3>
+    <p>Total Value: {{ total }}</p>
+    <p>Average Value: {{ average }}</p>
+    <p>Maximum Value: {{ highest }}</p>
+    <p>Minimum Value: {{ lowest }}</p>
+    
+</body>
+</html>
