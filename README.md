@@ -20,12 +20,8 @@ A Django-based mini project to analyze business records and generate analytics:
 - Analytics calculation
 
 ## Screenshots
-
-### Web Page Output
-![Dashboard](sql_outut.png.png)
-
-### SQL Output
-![SQL Output](webpage_output.png.png)
+[dashboard](webpage_output.png.png)
+[sql output](sql_outut.png.png)
 
 ## How to Run
 1. Clone repository
