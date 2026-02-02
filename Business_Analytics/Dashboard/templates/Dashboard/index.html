@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Analytics Dashboard</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; background-color: #f4f6f8; margin: 0; padding: 20px;">
+
+    <div style="max-width: 900px; margin: auto; background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+
+        <h2 style="text-align: center; color: #333;">Business Records</h2>
+
+        <form method="get" style="margin-bottom: 20px; text-align: center;">
+            <input type="text" name="category" placeholder="Enter Category"
+                   style="padding: 8px; width: 200px; border: 1px solid #ccc; border-radius: 4px;">
+            <button type="submit"
+                    style="padding: 8px 15px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                Filter
+            </button>
+        </form>
+
+        <table border="1" style="width: 100%; border-collapse: collapse; text-align: center;">
+            <tr style="background-color: #007bff; color: white;">
+                <th style="padding: 10px;">ID</th>
+                <th style="padding: 10px;">Category</th>
+                <th style="padding: 10px;">Value</th>
+                <th style="padding: 10px;">Date</th>
+                <th style="padding: 10px;">Update</th>
+            </tr>
+
+            {% for r in records %}
+            <tr style="background-color: #f9f9f9;">
+                <td style="padding: 8px;">{{ r.id }}</td>
+                <td style="padding: 8px;">{{ r.category }}</td>
+                <td style="padding: 8px;">{{ r.value }}</td>
+                <td style="padding: 8px;">{{ r.date }}</td>
+                <td style="padding: 8px;">
+                    <a href="/update/{{ r.id }}/"
+                       style="color: #007bff; text-decoration: none; font-weight: bold;">
+                        Increase
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h3 style="margin-top: 30px; color: #333;">Analytics</h3>
+
+        <div style="background: #eef2f5; padding: 15px; border-radius: 6px;">
+            <p><strong>Total Value:</strong> {{ total }}</p>
+            <p><strong>Average Value:</strong> {{ average }}</p>
+            <p><strong>Maximum Value:</strong> {{ highest }}</p>
+            <p><strong>Minimum Value:</strong> {{ lowest }}</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
